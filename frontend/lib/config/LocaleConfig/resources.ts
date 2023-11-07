@@ -6,6 +6,7 @@ import config_en from "../../../public/locales/en/config.json";
 import contact_en from "../../../public/locales/en/contact.json";
 import delete_brain_en from "../../../public/locales/en/deleteOrUnsubscribeFromBrain.json";
 import explore_en from "../../../public/locales/en/explore.json";
+import external_api_definition_en from "../../../public/locales/en/external_api_definition.json";
 import home_en from "../../../public/locales/en/home.json";
 import invitation_en from "../../../public/locales/en/invitation.json";
 import knowlegde_en from "../../../public/locales/en/knowledge.json";
@@ -113,6 +114,7 @@ export type Translations = {
   upload: typeof import("../../../public/locales/en/upload.json");
   user: typeof import("../../../public/locales/en/user.json");
   knowledge: typeof import("../../../public/locales/en/knowledge.json");
+  external_api_definition_en: typeof import("../../../public/locales/en/external_api_definition.json");
 };
 
 enum SupportedLanguages {
@@ -142,6 +144,7 @@ export const resources: Record<SupportedLanguages, Translations> = {
     user: user_en,
     delete_or_unsubscribe_from_brain: delete_brain_en,
     knowledge: knowlegde_en,
+    external_api_definition: external_api_definition_en,
   },
   es: {
     brain: brain_es,

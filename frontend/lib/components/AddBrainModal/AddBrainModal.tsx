@@ -11,11 +11,12 @@ import { Modal } from "@/lib/components/ui/Modal";
 import { defineMaxTokens } from "@/lib/helpers/defineMaxTokens";
 import { cn } from "@/lib/utils";
 
-import { PublicAccessConfirmationModal } from "./components/PublicAccessConfirmationModal";
-import { useAddBrainModal } from "./hooks/useAddBrainModal";
 import { Divider } from "../ui/Divider";
 import { Radio } from "../ui/Radio";
 import { TextArea } from "../ui/TextArea";
+import { ApiRequestDefinition } from "./ApiRequestDefinition";
+import { PublicAccessConfirmationModal } from "./components/PublicAccessConfirmationModal";
+import { useAddBrainModal } from "./hooks/useAddBrainModal";
 
 type AddBrainModalProps = {
   triggerClassName?: string;
@@ -39,8 +40,10 @@ export const AddBrainModal = ({
     brainStatusOptions,
     status,
     isPublicAccessConfirmationModalOpened,
+    knowledgeSourceOptions,
     onCancelPublicAccess,
     onConfirmPublicAccess,
+    knowledgeSource,
   } = useAddBrainModal();
 
   return (
@@ -97,6 +100,16 @@ export const AddBrainModal = ({
               {...register("status")}
             />
           </fieldset>
+          <fieldset className="w-full flex flex-col">
+            <Radio
+              items={knowledgeSourceOptions}
+              label={t("knowledge_source_label", { ns: "brain" })}
+              value={knowledgeSource}
+              className="flex-1 justify-between w-[50%]"
+              {...register("knowledgeSource")}
+            />
+          </fieldset>
+          <ApiRequestDefinition knowledgeSource={"api"} />
           <Field
             label={t("openAiKeyLabel", { ns: "config" })}
             placeholder={t("openAiKeyPlaceholder", { ns: "config" })}
