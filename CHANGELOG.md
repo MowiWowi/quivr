@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.109 (2023-11-08)
+
+## What's Changed
+* feat: add APIBrainQA  by @mamadoudicko in https://github.com/StanGirard/quivr/pull/1606
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.108...v0.0.109
+
 ## 0.0.108 (2023-11-07)
 
 ## What's Changed
